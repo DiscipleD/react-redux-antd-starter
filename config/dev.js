@@ -17,6 +17,7 @@ const config = Object.assign({}, baseConfig, {
 	devtool: 'eval-source-map',
 	middlewareSetting: {
 		publicPath: defaultSettings.publicPath,
+		buildPath: defaultSettings.buildPath,
 		stats: {
 			colors: true,
 			cached: false

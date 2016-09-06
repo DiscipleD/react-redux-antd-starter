@@ -224,8 +224,6 @@
 	  // ref: https://github.com/airbnb/javascript/tree/master/react
 		// 使用 class extends React.Component 而非 React.createClass
     "react/prefer-es6-class": 2,
-		// 如不需要传递 state 或 ref, 使用 function 来代替 class
-    "react/prefer-stateless-function": 1,
 		// 使用首字母大写来命名 component, 组件实例对象用驼峰式
 		"react/jsx-pascal-case": 2,
 		// jsx 属性用冒号 ""

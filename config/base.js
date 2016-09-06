@@ -19,7 +19,11 @@ module.exports = {
 		publicPath: defaultSettings.publicPath
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx'],
+		alias: {
+			containers: `${defaultSettings.sourcePath}/containers/`,
+			components: `${defaultSettings.sourcePath}/components/`
+		}
 	},
 	postcss: defaultSettings.postcss,
 	module: defaultSettings.getDefaultModules(),

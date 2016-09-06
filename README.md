@@ -1,17 +1,17 @@
 # react-redux-antd-starter
 **React 全家桶 + Ant.Design 脚手架**
 
-## React 全家桶包含
+## React 全家桶
 
-* react
-* react-redux
-* react-router
-* react-router-redux
-* redux
+* react: ^15.3.1
+* react-redux: ^4.4.5
+* react-router: ^2.7.0
+* react-router-redux: ^4.0.5
+* redux: ^3.6.0
 
 ## Ant Design
 
-* antd
+* antd: ^1.11.0
 
 ## start
 
