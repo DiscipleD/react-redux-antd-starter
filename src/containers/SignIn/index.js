@@ -1,10 +1,10 @@
 /**
- * Created by jack on 16-9-6.
+ * Created by jack on 16-9-7.
  */
 
 import React from 'react';
 
-export default class PageB extends React.Component {
+class SignIn extends React.Component {
 	render() {
 		const style = {
 			background: '#fff',
@@ -13,6 +13,8 @@ export default class PageB extends React.Component {
 			paddingTop: '24px',
 			overflow: 'hidden'
 		};
-		return <div style={style}><h2>项目 B</h2></div>;
+		return <div style={style}><h2>Sign In</h2></div>;
 	}
 }
+
+export default SignIn;

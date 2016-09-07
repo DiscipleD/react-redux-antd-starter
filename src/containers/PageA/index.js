@@ -13,6 +13,6 @@ export default class PageA extends React.Component {
 			paddingTop: '24px',
 			overflow: 'hidden'
 		};
-		return <div style={style}><h1>Page A</h1></div>;
+		return <div style={style}><h1>项目 A</h1></div>;
 	}
 }

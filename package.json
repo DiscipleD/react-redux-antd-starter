@@ -1,15 +1,10 @@
 {
-  "name": "react-redux-antd-starter",
-  "description": "A starter of react project using redux and ant design.",
-  "author": "Disciple_D",
-  "private": false,
+  "name": "shuyun-maintenance",
+  "private": true,
   "version": "0.0.1",
+  "description": "Shuyun Maintenance Project",
   "main": "",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DiscipleD/react-redux-antd-starter.git"
-  },
-  "license": "MIT",
+  "repository": "",
   "keywords": [],
   "devDependencies": {
     "webpack-dev-middleware": "^1.6.1",

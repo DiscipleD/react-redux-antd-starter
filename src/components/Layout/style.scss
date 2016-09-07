@@ -1,0 +1,27 @@
+.layout{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+
+  .layout-header{
+    height: 64px;
+  }
+
+  .layout-body{
+    background: #fff;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .layout-aside{
+    width: 224px;
+    height: 100%;
+    float: left;
+  }
+
+  .layout-content{
+    height: 100%;
+    padding: 0 24px;
+    overflow: auto;
+  }
+}
