@@ -6,6 +6,7 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
+    "transform-decorators-legacy",
     "transform-object-rest-spread",
     ["antd", {"style": true}]
   ]

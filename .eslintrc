@@ -64,6 +64,8 @@
 		"no-class-assign": 2,
 		// 在条件语句中不要使用赋值语句
 		"no-cond-assign": 2,
+		// 不使用 console
+		"no-console": 1,
 		// const申明的变量禁止修改
 		"no-const-assign": 2,
 		// 在正则表达式中禁止使用控制符（详见官网）

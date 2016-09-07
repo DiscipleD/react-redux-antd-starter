@@ -4,17 +4,17 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import configureStore from './redux/stores';
-import App from './containers/App';
 import './assets/style/reboot.scss';
+import App from 'containers/App';
 
 const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
+	<App store={store} history={history}/>,
 	document.getElementById('app')
 );

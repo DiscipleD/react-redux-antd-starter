@@ -3,16 +3,17 @@
  */
 
 import React from 'react';
-import {Link} from 'react-router';
-import {Menu} from 'antd';
+import { Link } from 'react-router';
+import { Menu } from 'antd';
 
 import './style.scss';
-export default class HeaderNav extends React.Component {
+
+class HeaderNav extends React.Component {
 	render() {
 		return (
 			<div className="header-nav">
 				<div className="header-nav-wrapper">
-					<div className="header-nav-logo">Project Logo</div>
+					<div className="header-nav-logo" onClick={() => this.props.onlogoClickFn()}>Project Logo</div>
 					<Menu
 						theme="dark"
 						mode="horizontal"
@@ -31,3 +32,5 @@ export default class HeaderNav extends React.Component {
 		)
 	}
 }
+
+export default HeaderNav;

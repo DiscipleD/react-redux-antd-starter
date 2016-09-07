@@ -12,7 +12,7 @@ const defaultSettings = require('./defaults');
 
 const config = Object.assign({}, baseConfig, {
 	cache: false,
-	devtool: 'sourcemap',
+	devtool: 'source-map',
 	plugins: [
 		new CleanPlugin([defaultSettings.buildPath]),
 		new webpack.optimize.DedupePlugin(),
