@@ -8,6 +8,9 @@
 * react-router: ^2.7.0
 * react-router-redux: ^4.0.5
 * redux: ^3.6.0
+* redux-actions: ^0.12.0
+* redux-promise: ^0.5.3
+* redux-thunk: ^2.1.0
 
 ## Ant Design
 

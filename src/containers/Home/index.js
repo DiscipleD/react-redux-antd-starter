@@ -8,23 +8,19 @@ import { connect } from 'react-redux';
 
 import HeaderNav from 'components/HeaderNav';
 
-@connect()
+@connect(
+	state => state,
+	{
+		goHome: () => push('/')
+	}
+)
 class Home extends React.Component {
-	constructor() {
-		super();
-		this.goHome = this.goHome.bind(this);
-	}
-
-	goHome() {
-		this.props.dispatch(push('/'));
-	}
-
 	render() {
 		return (
 			<section>
 				<HeaderNav
 					path={this.props.location.pathname}
-					onlogoClickFn={this.goHome}
+					onlogoClickFn={this.props.goHome}
 				/>
 				{this.props.children}
 			</section>

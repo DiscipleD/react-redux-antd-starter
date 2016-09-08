@@ -10,11 +10,16 @@ const baseConfig = require('./base');
 const defaultSettings = require('./defaults');
 
 const config = Object.assign({}, baseConfig, {
-	entry: [
-		'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true&timeout=20000r'
-	].concat(baseConfig.entry.app),
+	entry: {
+		// ...baseConfig.entry,
+		chunk: baseConfig.entry.chunk,
+		app: [
+			'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true&timeout=20000r'
+		].concat(baseConfig.entry.app)
+	},
 	cache: true,
-	devtool: 'eval-source-map',
+	// eval-source-map can not debug in chrome
+	devtool: 'inline-source-map',
 	middlewareSetting: {
 		publicPath: defaultSettings.publicPath,
 		buildPath: defaultSettings.buildPath,
@@ -24,9 +29,8 @@ const config = Object.assign({}, baseConfig, {
 		}
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.HotModuleReplacementPlugin()
 	].concat(baseConfig.plugins)
 });
 
 module.exports = config;
-

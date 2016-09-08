@@ -9,13 +9,11 @@ import Home from 'containers/Home';
 import PageA from 'containers/PageA';
 import PageB from 'containers/PageB';
 
-export default function routers() {
-	return (
-		<Route path="/" component={Home}>
-			<IndexRoute component={PageA} />
-			<Route path="a" component={PageA} />
-			<Route path="b" component={PageB} />
-			<Redirect from="*" to="/" />
-		</Route>
-	)
-}
+export default () => (
+	<Route path="/" component={Home}>
+		<IndexRoute component={PageA} />
+		<Route path="a" component={PageA} />
+		<Route path="b" component={PageB} />
+		<Redirect from="*" to="/" />
+	</Route>
+)

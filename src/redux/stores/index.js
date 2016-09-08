@@ -3,15 +3,9 @@
  */
 
 import { createStore, applyMiddleware } from 'redux'
-import { browserHistory } from 'react-router'
-import { routerMiddleware } from 'react-router-redux'
-import thunkMiddleware from 'redux-thunk'
-import createLogger from 'redux-logger'
 
 import reducers from '../reducers'
-
-const middleware = [routerMiddleware(browserHistory), thunkMiddleware];
-process.env.NODE_ENV === 'production' || middleware.push(createLogger());
+import middleware from '../middleware'
 
 export default initialState => {
 	const store = createStore(

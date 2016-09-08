@@ -10,8 +10,9 @@ module.exports = {
 	debug: true,
 	devtool: 'eval',
 	entry: {
-		app: [defaultSettings.sourcePath + '/index.js'],
-		chunk: ['react', 'react-redux', 'react-router']
+		chunk: ['react', 'react-dom', 'react-redux', 'react-router',
+			'react-router-redux', 'redux' , 'redux-actions', 'redux-logger', 'redux-promise'],
+		app: [defaultSettings.sourcePath + '/index.js']
 	},
 	output: {
 		path: defaultSettings.buildPath,
@@ -22,7 +23,8 @@ module.exports = {
 		extensions: ['', '.js', '.jsx'],
 		alias: {
 			containers: `${defaultSettings.sourcePath}/containers/`,
-			components: `${defaultSettings.sourcePath}/components/`
+			components: `${defaultSettings.sourcePath}/components/`,
+			actions: `${defaultSettings.sourcePath}/redux/actions/`
 		}
 	},
 	postcss: defaultSettings.postcss,
