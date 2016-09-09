@@ -1,0 +1,40 @@
+.sign-in-block{
+  height: 100%;
+  overflow: auto;
+  background: url('../../assets/images/sign-bg.jpg') no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sign-form-block {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .1);
+    width: 300px;
+  }
+
+  .sign-form-title{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+    color: #595f69;
+  }
+
+  .sign-form-group{
+    margin-bottom: 12px;
+  }
+
+  .sign-form-label{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 5px;
+    color: #9ba3af;
+  }
+}

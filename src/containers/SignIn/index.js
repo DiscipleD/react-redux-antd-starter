@@ -3,17 +3,18 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { signIn } from 'actions/user';
+import SignInForm from 'components/SignInform';
+
+@connect(
+	state => state.user,
+	{ signIn }
+)
 class SignIn extends React.Component {
 	render() {
-		const style = {
-			background: '#fff',
-			margin: '24px 0 0',
-			position: 'relative',
-			paddingTop: '24px',
-			overflow: 'hidden'
-		};
-		return <div style={style}><h2>Sign In</h2></div>;
+		return <SignInForm signIn={this.props.signIn} />;
 	}
 }
 

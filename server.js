@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 const compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, config.middlewareSetting));
 app.use(webpackHotMiddleware(compiler));
-app.use(express.static(config.middlewareSetting.buildPath));
+app.use(express.static(config.output.path));
 
 app.listen(PORT, err => {
 	err && console.log(err);
