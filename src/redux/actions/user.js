@@ -11,6 +11,14 @@ export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const { setUserInfo } = createActions({}, SET_USER_INFO);
 
+export const isNeedAuthorized = (user, target, replace, next) => {
+	user.isLogin ? next() : replace('/signIn');
+};
+
+export const isAuthorized = (user, target, replace, next) => {
+	user.isLogin ? replace('/') : next();
+};
+
 export const signIn = user =>
 	dispatch =>
 		UserService.signIn(user)

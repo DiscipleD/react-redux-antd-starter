@@ -13,7 +13,7 @@ class App extends React.Component {
 		const { store, history } = this.props;
 		return (
 			<Provider store={store}>
-				<Router history={history} routes={routers()}/>
+				<Router history={history} routes={routers(store)}/>
 			</Provider>
 		)
 	}
