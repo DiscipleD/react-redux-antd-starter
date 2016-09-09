@@ -33,3 +33,10 @@ npm start
 ```bash
 npm run build
 ```
+
+## More
+See more detail example, please ref to the `real-world` branch.
+
+```bash
+git checkout real-world
+```
