@@ -9,8 +9,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const sourcePath = path.join(__dirname, '/../src');
-const buildPath = path.join(__dirname, '/../build');
+const sourcePath = path.join(__dirname, '../../src');
+const buildPath = path.join(__dirname, '../../build');
 const publicPath = '/';
 const postcss = [autoprefixer({browsers: ['last 2 versions']})];
 

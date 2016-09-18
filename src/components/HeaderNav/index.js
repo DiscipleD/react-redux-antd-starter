@@ -10,23 +10,22 @@ import './style.scss';
 
 class HeaderNav extends React.Component {
 	render() {
+		const menuItem = (this.props.navList || [])
+			.map(navItem => (
+				<Menu.Item key={navItem.path}>
+					<Link to={navItem.path}>{navItem.label}</Link>
+				</Menu.Item>
+			));
 		return (
 			<div className="header-nav">
 				<div className="header-nav-wrapper">
-					<div className="header-nav-logo" onClick={() => this.props.onlogoClickFn()}>Project Logo</div>
+					<div className="header-nav-logo" onClick={this.props.onlogoClickFn}>Project Logo</div>
 					<Menu
 						theme="dark"
 						mode="horizontal"
-						defaultSelectedKeys={[this.props.path === '/' ? '/a' : this.props.path]}
+						defaultSelectedKeys={[this.props.path]}
 						style={{lineHeight: '64px'}}
-					>
-						<Menu.Item key="/a">
-							<Link to="/a">Page A</Link>
-						</Menu.Item>
-						<Menu.Item key="/b">
-							<Link to="/b">Page B</Link>
-						</Menu.Item>
-					</Menu>
+					>{menuItem}</Menu>
 				</div>
 			</div>
 		)

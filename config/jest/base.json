@@ -1,0 +1,9 @@
+{
+	"browser": true,
+	"verbose": true,
+	"testPathDirs": ["<rootDir>/src"],
+	"moduleNameMapper": {
+		"^.+\\.(css|less|scss|sass)$": "<rootDir>/mock/test/styleMock.js",
+		"^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mock/test/fileMock.js"
+	}
+}

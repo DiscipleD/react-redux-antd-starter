@@ -28,6 +28,18 @@ npm install
 npm start
 ```
 
+## run UT
+
+```bash
+npm test
+```
+
+## See UT coverage
+
+```bash
+npm run test:coverage
+```
+
 ## build package
 
 ```bash

@@ -12,6 +12,9 @@
   "license": "MIT",
   "keywords": [],
   "devDependencies": {
+    "jest": "^15.1.1",
+    "react-addons-test-utils": "^15.3.1",
+    "react-test-renderer": "^15.3.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
   },
@@ -63,6 +66,8 @@
   "scripts": {
     "build": "webpack --env=build",
     "start": "node server.js --env=dev",
-    "start:build": "node server.js --env=build"
+    "start:build": "node server.js --env=build",
+    "test": "jest --config config/jest/base.json --watch --onlyChanged --no-cache",
+    "test:coverage": "jest --config config/jest/coverage.json"
   }
 }

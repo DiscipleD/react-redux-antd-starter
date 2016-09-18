@@ -1,0 +1,11 @@
+{
+	"preset": "<rootDir>/config/jest/base.json",
+	"coverageDirectory": "<rootDir>/test/coverage",
+	"bail": true,
+	"collectCoverage": true,
+	"collectCoverageFrom": [
+		"src/components/**/*.js",
+		"src/containers/**/*.js",
+		"src/redux/**/*.js"
+	]
+}

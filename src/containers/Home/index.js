@@ -16,10 +16,21 @@ import HeaderNav from 'components/HeaderNav';
 )
 class Home extends React.Component {
 	render() {
+		const menuSetting = [{
+			path: '/a',
+			name: 'a',
+			label: 'Page A'
+		}, {
+			path: '/b',
+			name: 'b',
+			label: 'Page B'
+		}];
+		const currentPath = this.props.location.pathname === '/' ? menuSetting[0].path : this.props.location.pathname;
 		return (
 			<section>
 				<HeaderNav
-					path={this.props.location.pathname}
+					navList={menuSetting}
+					path={currentPath}
 					onlogoClickFn={this.props.goHome}
 				/>
 				{this.props.children}
