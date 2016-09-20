@@ -10,16 +10,9 @@ import middleware from '../middleware'
 export default initialState => {
 	const store = createStore(
 		reducers,
-		applyMiddleware(...middleware),
-		initialState)
-
-	if (module.hot) {
-		// Enable Webpack hot module replacement for reducers
-		module.hot.accept('../reducers', () => {
-			const nextReducer = require('../reducers')
-			store.replaceReducer(nextReducer)
-		})
-	}
+		initialState,
+		applyMiddleware(...middleware)
+	)
 
 	return store
 }

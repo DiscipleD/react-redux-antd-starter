@@ -9,6 +9,6 @@ import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 
 const middleware = [routerMiddleware(browserHistory), thunkMiddleware, promiseMiddleware];
-process.env.NODE_ENV === 'production' || middleware.push(createLogger());
+process.env.NODE_ENV === 'dev' && middleware.push(createLogger());
 
 export default middleware;

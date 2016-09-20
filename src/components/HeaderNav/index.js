@@ -23,7 +23,7 @@ class HeaderNav extends React.Component {
 					<Menu
 						theme="dark"
 						mode="horizontal"
-						defaultSelectedKeys={[this.props.path]}
+						selectedKeys={[this.props.path]}
 						style={{lineHeight: '64px'}}
 					>{menuItem}</Menu>
 				</div>

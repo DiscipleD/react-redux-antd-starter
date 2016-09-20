@@ -5,10 +5,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
+import menu from './menu';
 import pageA from './pageA';
 import pageB from './pageB';
 
 const reducers = combineReducers({
+	menu,
 	pageA,
 	pageB,
 	routing: routerReducer

@@ -3,6 +3,10 @@
 	"verbose": true,
 	"testPathDirs": ["<rootDir>/src"],
 	"moduleNameMapper": {
+		"^containers": "<rootDir>/src/containers",
+		"^components": "<rootDir>/src/components",
+		"^actions": "<rootDir>/src/redux/actions",
+
 		"^.+\\.(css|less|scss|sass)$": "<rootDir>/mock/test/styleMock.js",
 		"^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mock/test/fileMock.js"
 	}

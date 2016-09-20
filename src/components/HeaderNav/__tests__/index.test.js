@@ -35,9 +35,9 @@ describe('HeaderNav Component', () => {
 	});
 
 	it('Init component nav link according to props', () => {
-		expect(headerNavNode.querySelectorAll('li.ant-menu-item').length).toEqual(menuSetting.length);
+		expect(headerNavNode.querySelectorAll('li.ant-menu-item').length).toBe(menuSetting.length);
 
-		expect(headerNavNode.querySelector('li.ant-menu-item.ant-menu-item-selected a').textContent).toEqual(selectedItem.label);
+		expect(headerNavNode.querySelector('li.ant-menu-item.ant-menu-item-selected a').textContent).toBe(selectedItem.label);
 	});
 
 	// react-dom & react-test-renderer couldn't be import in a file
@@ -64,7 +64,7 @@ describe('HeaderNav Component', () => {
 		);
 		const headerNavNode = ReactDOM.findDOMNode(headerNav);
 
-		expect(headerNavNode.querySelectorAll('li.ant-menu-item').length).toEqual(0);
+		expect(headerNavNode.querySelectorAll('li.ant-menu-item').length).toBe(0);
 		expect(headerNavNode.querySelector('.header-nav-logo')).toBeDefined();
 	});
 });
