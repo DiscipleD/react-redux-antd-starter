@@ -1,0 +1,14 @@
+{
+	"browser": true,
+	"verbose": true,
+	"testPathDirs": ["<rootDir>/src"],
+	"moduleNameMapper": {
+		"^common": "<rootDir>/src/common",
+		"^components": "<rootDir>/src/components",
+		"^containers": "<rootDir>/src/containers",
+		"^actions": "<rootDir>/src/redux/actions",
+
+		"^.+\\.(css|less|scss|sass)$": "<rootDir>/test/mock/styleMock.js",
+		"^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/mock/fileMock.js"
+	}
+}

@@ -4,7 +4,7 @@
 
 'use strict';
 
-let defaultSettings = require('./defaults');
+const defaultSettings = require('./defaults');
 
 module.exports = {
 	debug: true,
@@ -19,14 +19,7 @@ module.exports = {
 		filename: '[name].[hash:8].js',
 		publicPath: defaultSettings.publicPath
 	},
-	resolve: {
-		extensions: ['', '.js', '.jsx'],
-		alias: {
-			containers: `${defaultSettings.sourcePath}/containers/`,
-			components: `${defaultSettings.sourcePath}/components/`,
-			actions: `${defaultSettings.sourcePath}/redux/actions/`
-		}
-	},
+	resolve: defaultSettings.resolve,
 	postcss: defaultSettings.postcss,
 	module: defaultSettings.getDefaultModules(),
 	plugins: defaultSettings.getDefaultPlugins()

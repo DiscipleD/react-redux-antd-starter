@@ -29,7 +29,10 @@ const config = Object.assign({}, baseConfig, {
 		}
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': '"dev"'
+		})
 	].concat(baseConfig.plugins)
 });
 

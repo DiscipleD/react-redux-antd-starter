@@ -5,7 +5,7 @@
 import React from 'react';
 import { Route, Redirect, IndexRoute } from 'react-router';
 
-import { isAuthorized, isNeedAuthorized } from 'actions/user';
+import UserService from 'common/services/UserService';
 import Dashboard from 'containers/Dashboard';
 import Home from 'containers/Home';
 import PageA from 'containers/PageA';
@@ -13,6 +13,14 @@ import PageB from 'containers/PageB';
 import SignIn from 'containers/SignIn';
 
 const getUserFromStore = store => store.getState().user;
+
+const isNeedAuthorized = (user, target, replace, next) => {
+	UserService.isLogin(user) ? next() : replace('/signIn');
+};
+
+const isAuthorized = (user, target, replace, next) => {
+	UserService.isLogin(user) ? replace('/') : next();
+};
 
 export default store => (
 	<Route>

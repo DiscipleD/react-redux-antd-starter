@@ -5,16 +5,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { signIn } from 'actions/user';
+import { userSignIn } from 'actions/user';
 import SignInForm from 'components/SignInform';
 
 @connect(
-	state => state.user,
-	{ signIn }
+	state => state,
+	{ userSignIn }
 )
 class SignIn extends React.Component {
 	render() {
-		return <SignInForm signIn={this.props.signIn} />;
+		const {user} = this.props;
+		return <SignInForm user={user} signIn={this.props.userSignIn} />;
 	}
 }
 

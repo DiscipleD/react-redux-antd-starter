@@ -10,8 +10,13 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './redux/stores';
 import './assets/style/reboot.scss';
 import App from 'containers/App';
+import LocalStorage from 'common/util/LocalStorage';
 
-const store = configureStore();
+const getInitState = () => ({
+	user: LocalStorage.getItem('user') || {}
+});
+
+const store = configureStore(getInitState());
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(

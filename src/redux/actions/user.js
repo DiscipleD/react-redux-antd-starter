@@ -3,27 +3,29 @@
  */
 
 import { createActions } from 'redux-actions';
-import { push } from 'react-router-redux';
 
-import UserService from '../../common/services/user';
+import { UserService } from 'common/services';
+import { goHome, goSignIn } from './common';
 
-export const SET_USER_INFO = 'SET_USER_INFO';
+export const SIGN_IN = 'SIGN_IN';
+export const LOGOUT = 'LOGOUT';
 
-export const { setUserInfo } = createActions({}, SET_USER_INFO);
+const { signIn, logout } = createActions({}, SIGN_IN, LOGOUT);
 
-export const isNeedAuthorized = (user, target, replace, next) => {
-	user.isLogin ? next() : replace('/signIn');
-};
-
-export const isAuthorized = (user, target, replace, next) => {
-	user.isLogin ? replace('/') : next();
-};
-
-export const signIn = user =>
+export const userSignIn = user =>
 	dispatch =>
 		UserService.signIn(user)
 			.then(data => {
-				dispatch(setUserInfo({isLogin: data}));
-				dispatch(push('/'));
+				dispatch(signIn({
+					...user,
+					isLogin: data
+				}));
+				dispatch(goHome());
 			})
 			.catch(console.error);
+
+export const userLogout = () =>
+	dispatch => {
+		dispatch(logout());
+		dispatch(goSignIn());
+	};

@@ -18,5 +18,13 @@
   }
 
   .user-actions{
+    .nav-item{
+      padding: 0 12px;
+      display: inline-block;
+    }
+
+    .nav-item + .nav-item {
+      border-left: 1px solid;
+    }
   }
 }

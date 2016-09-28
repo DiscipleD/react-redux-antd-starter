@@ -4,12 +4,22 @@
 
 import { handleActions } from 'redux-actions';
 
-import { SET_USER_INFO } from 'actions/user';
+import LocalStorage from 'common/util/LocalStorage';
+import { SIGN_IN, LOGOUT } from 'actions/user';
 
 const user = handleActions({
-	[SET_USER_INFO]: (state, actions) => ({
+	[SIGN_IN]: (state = {}, actions) => {
+		LocalStorage.setItem('user', {name: actions.payload.username});
+		return {
+			...state,
+			isLogin: actions.payload.isLogin,
+			name: actions.payload.username
+		}
+	},
+
+	[LOGOUT]: (state = {}) => ({
 		...state,
-		...actions.payload
+		isLogin: false
 	})
 }, {});
 

@@ -12,9 +12,7 @@ const allowedEnvs = ['dev', 'build'];
 
 // Set the correct environment
 let env;
-if (args._.length > 0 && args._.indexOf('start') !== -1) {
-	env = 'test';
-} else if (args.env) {
+if (args.env) {
 	env = args.env;
 } else {
 	env = 'dev';
@@ -29,7 +27,7 @@ process.env.REACT_WEBPACK_ENV = env;
 function buildConfig(wantedEnv) {
 	const isValid = wantedEnv && wantedEnv.length > 0 && allowedEnvs.indexOf(wantedEnv) !== -1;
 	const validEnv = isValid ? wantedEnv : 'dev';
-	const config = require(path.join(__dirname, 'config/' + validEnv));
+	const config = require(path.join(__dirname, 'config/webpack/' + validEnv));
 	return config;
 }
 

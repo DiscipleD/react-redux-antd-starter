@@ -7,11 +7,12 @@ import { createStore, applyMiddleware } from 'redux'
 import reducers from '../reducers'
 import middleware from '../middleware'
 
-export default initialState => {
+export default (initialState = {}) => {
 	const store = createStore(
 		reducers,
-		applyMiddleware(...middleware),
-		initialState)
+		initialState,
+		applyMiddleware(...middleware)
+		)
 
 	if (module.hot) {
 		// Enable Webpack hot module replacement for reducers

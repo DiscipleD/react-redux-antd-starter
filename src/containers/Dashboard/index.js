@@ -3,29 +3,63 @@
  */
 
 import React from 'react';
-import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
+import { goHome } from 'actions';
+import { userLogout } from 'actions/user';
+import { queryMenuSetting } from 'actions/menu'
 import HeaderNav from 'components/HeaderNav';
 import Menu from 'components/Menu';
 import Layout from 'components/Layout';
 
-@connect(state => state.routing)
-class Dashboard extends React.Component {
-	constructor() {
-		super();
-		this.goHome = this.goHome.bind(this);
-	}
+const selectedItemsSelector = (list = [], path = '') =>
+	list
+		.map(subMenu => ({
+			...subMenu,
+			child: subMenu.child.filter(menuItem => menuItem.path === path)
+		}))
+		.filter(subMenu => subMenu.child.length > 0);
 
-	goHome() {
-		this.props.dispatch(push('/'));
+@connect(
+	state => ({
+		user: state.user,
+		menuList: state.menu.list,
+		selectedItems: createSelector(
+			state => state.menu.list,
+			state => state.routing.locationBeforeTransitions.pathname,
+			selectedItemsSelector
+		)(state)
+	}), {
+		goHome,
+		userLogout,
+		queryMenuSetting
+	})
+class Dashboard extends React.Component {
+	componentWillMount() {
+		this.props.queryMenuSetting();
 	}
 
 	render() {
+		const { goHome, user, userLogout, menuList, selectedItems } = this.props;
+		const logo = {
+			name: 'logo',
+			label: 'Logo',
+			onClick: goHome
+		};
+		const navItems = [{
+			name: 'userName',
+			label: user.name
+		}, {
+			name: 'logout',
+			label: 'Logout',
+			fn: userLogout
+		}];
+
 		return (
 			<Layout
-				header={<HeaderNav onlogoClickFn={this.goHome} />}
-				aside={<Menu path={this.props.location.pathname} />}
+				header={<HeaderNav logo={logo} navItems={navItems} />}
+				aside={<Menu menuList={menuList} selectedItems={selectedItems} />}
 				content={this.props.children}
 			/>
 		)

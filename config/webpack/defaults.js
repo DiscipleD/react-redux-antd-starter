@@ -9,9 +9,18 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const sourcePath = path.join(__dirname, '/../src');
-const buildPath = path.join(__dirname, '/../build');
+const sourcePath = path.join(__dirname, '../../src');
+const buildPath = path.join(__dirname, '../../build');
 const publicPath = '/';
+const resolve = {
+	extensions: ['', '.js', '.jsx'],
+	alias: {
+		common: `${sourcePath}/common/`,
+		containers: `${sourcePath}/containers/`,
+		components: `${sourcePath}/components/`,
+		actions: `${sourcePath}/redux/actions/`
+	}
+};
 const postcss = [autoprefixer({browsers: ['last 2 versions']})];
 
 function getDefaultModules() {
@@ -87,6 +96,7 @@ module.exports = {
 	sourcePath,
 	buildPath,
 	publicPath,
+	resolve,
 	postcss,
 	getDefaultModules,
 	getDefaultPlugins

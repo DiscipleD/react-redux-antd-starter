@@ -7,7 +7,26 @@ import { Input, Button } from 'antd';
 
 import './style.scss';
 
-class SignInForm extends React.Component {
+export default React.createClass({
+	getInitialState() {
+		return {
+			username: this.props.user.name,
+			userpwd: ''
+		}
+	},
+
+	signIn() {
+		this.props.signIn(this.state);
+	},
+
+	usernameInputChange(event) {
+		this.setState({username: event.target.value});
+	},
+
+	passwordInputChange(event) {
+		this.setState({userpwd: event.target.value});
+	},
+
 	render() {
 		const styles = {
 			buttonRow: {
@@ -21,17 +40,28 @@ class SignInForm extends React.Component {
 						<h2 className="sign-form-title">登录</h2>
 						<div className="sign-form-group">
 							<label className="sign-form-label">用户名</label>
-							<Input size="large" placeholder="请输入用户名" />
+							<Input
+								value={this.state.username}
+								onChange={this.usernameInputChange}
+								size="large"
+								placeholder="请输入用户名"
+							/>
 						</div>
 						<div className="sign-form-group">
 							<label className="sign-form-label">密码</label>
-							<Input size="large" type="password" placeholder="请输入密码" />
+							<Input
+								type="password"
+								value={this.state.userpwd}
+								onChange={this.passwordInputChange}
+								size="large"
+								placeholder="请输入密码"
+							/>
 						</div>
 						<div style={styles.buttonRow}>
 							<Button
 								type="primary"
 								size="large"
-								onClick={this.props.signIn}
+								onClick={this.signIn}
 							>Sign In</Button>
 						</div>
 					</div>
@@ -39,6 +69,4 @@ class SignInForm extends React.Component {
 			</section>
 		)
 	}
-}
-
-export default SignInForm;
+});
