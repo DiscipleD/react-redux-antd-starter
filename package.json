@@ -66,10 +66,11 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
+		"lint": "eslint src",
     "build": "webpack --env=build",
     "start": "node server.js --env=dev",
     "start:build": "node server.js --env=build",
-    "test": "jest --config config/jest/base.json --watch --onlyChanged --no-cache",
+    "test": "npm run lint && jest --config config/jest/base.json --watch --onlyChanged --no-cache",
     "test:coverage": "jest --config config/jest/coverage.json"
   }
 }
