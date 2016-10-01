@@ -1,3 +1,5 @@
+![Build Status](https://img.shields.io/travis/discipled/react-redux-antd-starter/real-world.svg)
+
 # nebula-portal
 
 ## env 
