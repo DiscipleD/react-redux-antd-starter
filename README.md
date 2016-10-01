@@ -1,4 +1,4 @@
-![Build Status](https://img.shields.io/travis/discipled/react-redux-antd-starter/real-world.svg)
+[![Build Status](https://img.shields.io/travis/discipled/react-redux-antd-starter/real-world.svg)](https://travis-ci.org/DiscipleD/react-redux-antd-starter)
 
 # nebula-portal
 
