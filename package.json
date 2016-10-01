@@ -69,6 +69,6 @@
     "start": "node server.js --env=dev",
     "start:build": "node server.js --env=build",
     "test": "npm run lint && jest --config config/jest/base.json --watch --onlyChanged --no-cache",
-    "test:coverage": "jest --config config/jest/coverage.json"
+    "test:coverage": "npm run lint && jest --config config/jest/coverage.json"
   }
 }
