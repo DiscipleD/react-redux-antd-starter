@@ -4,7 +4,7 @@
 
 // import renderer from 'react-test-renderer';
 
-import Home from '../index';
+// import Home from '../index';
 
 describe('Home Container', () => {
 	it('match snapshot', () => {
