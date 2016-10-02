@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/travis/discipled/react-redux-antd-starter/master.svg)](https://travis-ci.org/DiscipleD/react-redux-antd-starter)
+[![Build Status](https://img.shields.io/travis/DiscipleD/react-redux-antd-starter/master.svg)](https://travis-ci.org/DiscipleD/react-redux-antd-starter)
 
 # react-redux-antd-starter
 **React 全家桶 + Ant.Design 脚手架**
