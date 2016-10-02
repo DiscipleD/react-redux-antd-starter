@@ -1,8 +1,8 @@
 {
-  "name": "shuyun-maintenance",
+  "name": "react-redux-antd-starter",
   "private": true,
   "version": "0.0.1",
-  "description": "Shuyun Maintenance Project",
+  "description": "A starter of react project using redux and ant design.",
   "main": "",
   "repository": "",
   "keywords": [],
