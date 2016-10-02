@@ -7,7 +7,7 @@
 		"^components": "<rootDir>/src/components",
 		"^actions": "<rootDir>/src/redux/actions",
 
-		"^.+\\.(css|less|scss|sass)$": "<rootDir>/mock/test/styleMock.js",
-		"^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mock/test/fileMock.js"
+		"^.+\\.(css|less|scss|sass)$": "<rootDir>/test/mock/styleMock.js",
+		"^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/mock/fileMock.js"
 	}
 }
