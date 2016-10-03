@@ -4,7 +4,8 @@ node_js:
 cache:
   directories: node_modules
 script:
- - npm run test:coverage
+  - npm run test:coverage
+  - npm run codecov
 os:
   # - linux
   - osx

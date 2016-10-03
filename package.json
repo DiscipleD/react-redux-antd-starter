@@ -12,6 +12,8 @@
   "license": "MIT",
   "keywords": [],
   "devDependencies": {
+    "babel-jest": "^15.0.0",
+    "codecov": "^1.0.1",
     "jest": "^15.1.1",
     "react-addons-test-utils": "^15.3.1",
     "react-test-renderer": "^15.3.1",
@@ -71,6 +73,7 @@
     "start": "node server.js --env=dev",
     "start:build": "node server.js --env=build",
     "test": "npm run lint && jest --config config/jest/base.json --watch --onlyChanged --no-cache",
-    "test:coverage": "jest --config config/jest/coverage.json"
+    "test:coverage": "npm run lint && jest --config config/jest/coverage.json",
+    "codecov": "codecov"
   }
 }
