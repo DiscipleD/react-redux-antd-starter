@@ -6,7 +6,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { userSignIn } from 'actions/user';
-import SignInForm from 'components/SignInform';
+import SignInForm from 'components/SignInForm';
 
 @connect(
 	state => state,

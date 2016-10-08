@@ -15,10 +15,10 @@ const publicPath = '/';
 const resolve = {
 	extensions: ['', '.js', '.jsx'],
 	alias: {
-		common: `${sourcePath}/common/`,
-		containers: `${sourcePath}/containers/`,
-		components: `${sourcePath}/components/`,
-		actions: `${sourcePath}/redux/actions/`
+		common: `${sourcePath}/common`,
+		containers: `${sourcePath}/containers`,
+		components: `${sourcePath}/components`,
+		actions: `${sourcePath}/redux/actions`
 	}
 };
 const postcss = [autoprefixer({browsers: ['last 2 versions']})];

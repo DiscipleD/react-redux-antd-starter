@@ -7,5 +7,5 @@ script:
   - npm run test:coverage
   - npm run codecov
 os:
-  # - linux
+  - linux
   - osx
