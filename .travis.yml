@@ -10,7 +10,7 @@ script:
 - npm run test:coverage
 - npm run codecov
 after_success:
-- .deploy.sh
+- bash ./deploy.sh
 os:
 - linux
 - osx
