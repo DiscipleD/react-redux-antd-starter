@@ -1,11 +1,16 @@
 language: node_js
 node_js:
-  - "6"
+- '6'
 cache:
   directories: node_modules
+before_install:
+- openssl aes-256-cbc -K $encrypted_c7881d9cb8b5_key -iv $encrypted_c7881d9cb8b5_iv
+  -in deploy_key.enc -out deploy_key -d
 script:
-  - npm run test:coverage
-  - npm run codecov
+- npm run test:coverage
+- npm run codecov
+after_success:
+- .deploy.sh
 os:
-  - linux
-  - osx
+- linux
+- osx
