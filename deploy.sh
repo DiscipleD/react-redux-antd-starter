@@ -22,13 +22,13 @@ git config user.name "Disciple_D"
 git config user.email "disciple.ding@gmail.com"
 
 # Force add build folder to git
-git add -f TARGET_PATH
+git add -f $TARGET_PATH
 
 # Commit the build code, that is a local commit for git subtree split
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
 # Split build file as a $TARGET_BRANCH of git
-git subtree split -P TARGET_PATH -b $TARGET_BRANCH
+git subtree split -P $TARGET_PATH -b $TARGET_BRANCH
 
 # Add ssh authorization
 openssl aes-256-cbc -K ${!ENCRYPTED_KEY} -iv ${!ENCRYPTED_IV} -in deploy_key.enc -out deploy_key -d
