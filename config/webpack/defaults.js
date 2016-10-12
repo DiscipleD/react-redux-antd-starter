@@ -11,7 +11,7 @@ const autoprefixer = require('autoprefixer');
 
 const sourcePath = path.join(__dirname, '../../src');
 const buildPath = path.join(__dirname, '../../build');
-const publicPath = '/';
+const publicPath = '';
 const resolve = {
 	extensions: ['', '.js', '.jsx'],
 	alias: {
