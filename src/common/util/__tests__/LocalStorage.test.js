@@ -2,7 +2,7 @@
  * Created by jack on 16-9-27.
  */
 
-import storageMock from '../../../../test/mock/storageMock';
+import storageMock from '../../../../tests/mock/storageMock';
 import LocalStorage from '../LocalStorage';
 
 describe('Util: LocalStorage', () => {

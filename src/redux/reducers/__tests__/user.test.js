@@ -5,7 +5,7 @@
 import userReducer from '../user';
 import LocalStorage from 'common/util/LocalStorage';
 import { SIGN_IN, LOGOUT } from 'actions/user';
-import storageMock from '../../../../test/mock/storageMock';
+import storageMock from '../../../../tests/mock/storageMock';
 
 describe('Reducer: User', () => {
 	beforeEach(() => {

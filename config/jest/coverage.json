@@ -1,6 +1,6 @@
 {
 	"preset": "<rootDir>/config/jest/base.json",
-	"coverageDirectory": "<rootDir>/test/coverage",
+	"coverageDirectory": "<rootDir>/tests/coverage",
 	"bail": true,
 	"collectCoverage": true,
 	"collectCoverageFrom": [
