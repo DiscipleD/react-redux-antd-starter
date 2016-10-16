@@ -6,8 +6,8 @@ TARGET_PATH="build/"
 TARGET_BRANCH="gh-pages"
 
 # Travis encrypt variables
-ENCRYPTED_KEY="encrypted_${ENCRYPTION}_key"
-ENCRYPTED_IV="encrypted_${ENCRYPTION}_iv"
+ENCRYPTED_KEY="encrypted_${GIT_DEPLOY_KEY}_key"
+ENCRYPTED_IV="encrypted_${GIT_DEPLOY_KEY}_iv"
 
 # Save some useful information
 REPO=`git config remote.origin.url`
@@ -18,8 +18,8 @@ SHA=`git rev-parse --verify HEAD`
 npm run build
 
 # Set committer git info
-git config user.name "Disciple_D"
-git config user.email "disciple.ding@gmail.com"
+git config user.name $USER_NAME
+git config user.email $USER_EMAIL
 
 # Force add build folder to git
 git add -f $TARGET_PATH

@@ -3,14 +3,22 @@ node_js:
 - '6'
 cache:
   directories: node_modules
+before_script:
+- npm run build
+- npm run start:build
 script:
 - npm run test:coverage
 - npm run codecov
-after_success:
-- bash ./deploy.sh
+- npm run test:e2e
 os:
 - linux
 - osx
 env:
   global:
-  - ENCRYPTION: "c7881d9cb8b5"
+  - USER_NAME: Disciple_D
+  - USER_EMAIL: disciple.ding@gmail.com
+  - GIT_DEPLOY_KEY: c7881d9cb8b5
+  - secure: v6CRj4CKMqxEQ9MSYKAkbmrBgIBZvoppICx6JyjQXhexPOVQKBvboCgdL0lOOZdGZ9rEqSMXvud97kBAFYd1sdP/kSwXdUct5BOMIT3a5GLtY5aQfOocBwR6IvmZpO2U+4VhrCwkzdaq2Ehq0fAXF1pkxDj9YkJZmwDNhTdfDGkib+AwDyr4TLQFC1QrD/4vmrULb3NZdW1KadFYjLzVF8FMa2tDSYMFFVymYu5nuCa/Z0dqSfFy8McYwBMzThDkDRHMT/sf4zKDPyxUwN7xGfC6T88xzCEaltN6K7MGMGKvl7Y0p7VjYW/+rO38936kj6xuPU6J7Vh2yKPJhhT2LtM7ucuo0XSpIxCxaKXWeEmYl2KkCMWNHgrWACE//WBFRNx/JQHimw+abr1Zt/3V9QmSEvnB3hHB0NQgJ2nVrVDjk51RSVaiP4sfQ8GVqEwr1+wJqe4wz7fV+jvRB9uUGgGsjsBbZi6ZycoMtOBoJ+miviRCjZvf9sOZKfIDjcuE5vETQcE37d/++yplCG0N83Kx+q67mbWXirfNj2CfXp7pwHTN+n21v1BSicXqQ6+jaNzD/pcN/GTHgZ5A+VkdcjSmEziuQTO035i1nnCB9TQdFeRdGdfo6DAiq8YOfyVkQ1lml6lWqbPqa4QWokRUD2yA/hAIzNWe5BeLF2JFQBc=
+  - secure: S0vWVM74eiAHhk+kqqvym9aIgqaaGyGz9H3rfmEZoG4iuvXjXRaHOOSHxIRVsh5RYXr0PWHAj24fpN5AyUOlu5NQiwACBqmpw9KZBgVekWFshA5uYmpNpCG9w5/UAQa9q2+EcndOCM4lAyuT2wVJ5WfsHRzIA5jUpK1YmUYtuVICTSkumRoEaxfPkwzcGLF7f6aP7mG1YRKeO1F9+RhBfaGN1kYordxIk/fniH8OFB0XiLZ5OIovaAIYFKic0P1wUFwa78jU2fovdObS8JySl2LP19eaLX0MgAFoPB7oLFPxFBN7FCID41TEodDdZtcNnKJT4uQ/iWRqww2BOwVQM9whyBTg8J4kJZALicR4CzGCuUbdyQd2kh/hNZ9d9SKb6YXdcZElFmh3FY6zgfgv5PAx+jDlkfzmgBh7OD5OM4GVrsCsjnaAlmTUNtRPx9B4ps0gbr25F1PxuNy+MXfwSYJdliL+N01BTpiGyts/EXAraWvEm5YkhWfTnbgc8osd3cX9vwB0QHksK+BpkaEs6XCwU6kGMxAJIlafRv6RslREdTPBpYaXB4sGqdYXWY+YFqNxsAwTB3KWIq/uhZmSkou1jZfZa2QonMuVot68U11U7afmPzX8KOVeO2IEcUjt6I4eCYQ+31xO/wSLIQ1uoRySQ2S9VCzr+yzDpu0KVps=
+addons:
+  sauce_connect: true
