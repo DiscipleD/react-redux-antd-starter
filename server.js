@@ -11,6 +11,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
 const open = require('open');
 
+const args = require('minimist')(process.argv.slice(2));
 const PORT = parseInt(process.env.PORT || 8080);
 const app = new express();
 
@@ -19,14 +20,15 @@ app.use((req, res, next) => {
 	next();
 });
 
-const compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, config.middlewareSetting));
-app.use(webpackHotMiddleware(compiler));
+if (args.env !== 'build') {
+	const compiler = webpack(config);
+	app.use(webpackDevMiddleware(compiler, config.middlewareSetting));
+	app.use(webpackHotMiddleware(compiler));
+}
+
 app.use(express.static(config.output.path));
 
 app.listen(PORT, err => {
 	err && console.log(err);
-	console.log('Listening at localhost:' + PORT);
-	console.log('Opening your system browser...');
-	open('http://localhost:' + PORT);
+	args.env !== 'build' && open('http://localhost:' + PORT);
 });

@@ -7,6 +7,9 @@ import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+// Fetch service polyfill
+import 'core-js/modules/es6.promise';
+
 import configureStore from './redux/stores';
 import './assets/style/reboot.scss';
 import App from 'containers/App';

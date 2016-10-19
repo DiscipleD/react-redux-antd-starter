@@ -22,5 +22,9 @@ module.exports = {
 	resolve: defaultSettings.resolve,
 	postcss: defaultSettings.postcss,
 	module: defaultSettings.getDefaultModules(),
-	plugins: defaultSettings.getDefaultPlugins()
+	plugins: defaultSettings.getDefaultPlugins(),
+	middlewareSetting: {
+		publicPath: defaultSettings.publicPath,
+		buildPath: defaultSettings.buildPath
+	}
 };

@@ -21,8 +21,6 @@ const config = Object.assign({}, baseConfig, {
 	// eval-source-map can not debug in chrome
 	devtool: 'inline-source-map',
 	middlewareSetting: {
-		publicPath: defaultSettings.publicPath,
-		buildPath: defaultSettings.buildPath,
 		stats: {
 			colors: true,
 			cached: false

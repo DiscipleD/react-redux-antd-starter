@@ -17,7 +17,6 @@ if (args.env) {
 } else {
 	env = 'dev';
 }
-process.env.REACT_WEBPACK_ENV = env;
 
 /**
  * Build the webpack configuration

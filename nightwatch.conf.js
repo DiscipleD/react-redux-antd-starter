@@ -5,7 +5,7 @@
 module.exports = {
 	src_folders: ['tests/e2e'],
 	output_folder: 'tests/reports',
-	custom_commands_path: '',
+	custom_commands_path: 'tests/saucelabs',
 	custom_assertions_path: '',
 	page_objects_path: '',
 	globals_path: '',
@@ -18,8 +18,8 @@ module.exports = {
 	test_settings: {
 		default: {
 			launch_url: 'http://localhost:8080',
-			selenium_port: 80,
-			selenium_host: 'ondemand.saucelabs.com',
+			selenium_port: 4445,
+			selenium_host: 'localhost',
 			username: process.env.SAUCE_USERNAME,
 			access_key: process.env.SAUCE_ACCESS_KEY,
 			silent: true,
@@ -28,7 +28,12 @@ module.exports = {
 				path: ''
 			},
 			globals: {
-				waitForConditionTimeout: 10000
+				waitForConditionTimeout: 15000
+			},
+			desiredCapabilities: {
+				build: `build-${process.env.TRAVIS_JOB_NUMBER}`,
+				public: 'public',
+				'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER
 			}
 		},
 
