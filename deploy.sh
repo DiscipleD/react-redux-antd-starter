@@ -18,8 +18,8 @@ SHA=`git rev-parse --verify HEAD`
 npm run build
 
 # Set committer git info
-git config user.name $USER_NAME
-git config user.email $USER_EMAIL
+git config user.name "$USER_NAME"
+git config user.email "$USER_EMAIL"
 
 # Force add build folder to git
 git add -f $TARGET_PATH
