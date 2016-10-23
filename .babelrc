@@ -9,6 +9,9 @@
     "transform-decorators-legacy",
     "transform-object-rest-spread",
     "transform-class-properties",
-    ["antd", {"style": true}]
+    ["import", {
+			"libraryName": "antd",
+			"style": true
+		}]
   ]
 }
