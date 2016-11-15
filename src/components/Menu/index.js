@@ -6,8 +6,16 @@ import React from 'react';
 import {Link} from 'react-router';
 import {Menu, Icon} from 'antd';
 
-class SYMenu extends React.Component {
-	getKeysFromSelectedItems = (list = []) => {
+export default React.createClass({
+	getInitialState() {
+		return this.getKeysFromSelectedItems(this.props.selectedItems)
+	},
+
+	componentWillReceiveProps(props) {
+		this.setState(this.getKeysFromSelectedItems(props.selectedItems));
+	},
+
+	getKeysFromSelectedItems(list = []) {
 		const openKeys = [];
 		const selectedKeys = [];
 		list.forEach(subMenu =>
@@ -17,20 +25,25 @@ class SYMenu extends React.Component {
 			})
 		);
 		return {openKeys, selectedKeys};
-	};
+	},
 
+	toggleSubMenu(e) {
+		const openKey = e.key;
+		const index = this.state.openKeys.findIndex(key => key === openKey);
+		index > -1 ? this.state.openKeys.splice(index, 1) : this.state.openKeys.push(openKey);
+	},
 
-	// openKeys 设置已知 bug, 升级 Antd 至 2.0.0 后修复
 	render() {
+		console.log('render');
 		const styles = {
 			height: '100%'
 		};
-		const {menuList, selectedItems} = this.props;
-		const {openKeys, selectedKeys} = this.getKeysFromSelectedItems(selectedItems);
+		const {menuList} = this.props;
 		const MenuContent = menuList.map(subMenu =>
 			<Menu.SubMenu
 				key={subMenu.key}
 				title={<span><Icon type={subMenu.icon}/>{subMenu.title}</span>}
+				onTitleClick={this.toggleSubMenu}
 			>
 				{subMenu.child.map(menuItem =>
 					<Menu.Item key={menuItem.key}>
@@ -43,14 +56,12 @@ class SYMenu extends React.Component {
 		return (
 			<Menu
 				mode="inline"
-				selectedKeys={selectedKeys}
-				openKeys={openKeys}
+				selectedKeys={this.state.selectedKeys}
+				openKeys={this.state.openKeys}
 				style={styles}
 			>
 				{MenuContent}
 			</Menu>
 		)
 	}
-}
-
-export default SYMenu;
+});
