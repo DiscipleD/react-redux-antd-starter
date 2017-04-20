@@ -1,0 +1,28 @@
+exports[`HeaderNav Component match snapshot 1`] = `
+<div
+  className="header-nav">
+  <div
+    className="header-nav-logo"
+    onClick={[Function mockConstructor]}>
+    logo
+  </div>
+  <ul
+    className="user-actions">
+    <li
+      className="nav-item">
+      <a
+        onClick={[Function bound handleClick]}
+        style={Object {}}>
+        aa
+      </a>
+    </li>
+    <li
+      className="nav-item">
+      <a
+        onClick={[Function mockConstructor]}>
+        Logout
+      </a>
+    </li>
+  </ul>
+</div>
+`;

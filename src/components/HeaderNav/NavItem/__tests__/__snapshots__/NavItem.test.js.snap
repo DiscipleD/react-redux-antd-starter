@@ -1,0 +1,27 @@
+exports[`NavItem Component Function Item 1`] = `
+<li
+  className="nav-item">
+  <a
+    onClick={[Function mockConstructor]}>
+    aa
+  </a>
+</li>
+`;
+
+exports[`NavItem Component Link Item 1`] = `
+<li
+  className="nav-item">
+  <a
+    onClick={[Function bound handleClick]}
+    style={Object {}}>
+    aa
+  </a>
+</li>
+`;
+
+exports[`NavItem Component Plain Item 1`] = `
+<li
+  className="nav-item">
+  aa
+</li>
+`;

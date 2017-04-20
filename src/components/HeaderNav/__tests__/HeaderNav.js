@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import ReactTestUtils from 'react-addons-test-utils';
 
 import HeaderNav from '../index';
@@ -24,7 +24,7 @@ describe('HeaderNav Component', () => {
 		label: 'Logout',
 		fn: jest.fn()
 	}];
-	const headerNav = <HeaderNav logo={logo} navItems={navItems} />;
+	const headerNav = <HeaderNav logo={logo} navItems={navItems}/>;
 	const headerNavElement = ReactTestUtils.renderIntoDocument(headerNav);
 	const headerNavNode = ReactDOM.findDOMNode(headerNavElement);
 
@@ -42,21 +42,15 @@ describe('HeaderNav Component', () => {
 	it('0 nav item.', () => {
 		const logo = {};
 		const headerNav = ReactTestUtils.renderIntoDocument(
-			<HeaderNav logo={logo} />
+			<HeaderNav logo={logo}/>
 		);
 		const headerNavNode = ReactDOM.findDOMNode(headerNav);
 
 		expect(headerNavNode.querySelectorAll('.nav-item').length).toBe(0);
 	});
 
-	/* it('match snapshot', () => {
-	 const headerNavSnapshot = renderer.create(
-	 <HeaderNav
-	 navList={menuSetting}
-	 path={selectedItem.path}
-	 onlogoClickFn={goHomeFn}
-	 />
-	 ).toJSON();
-	 expect(headerNavSnapshot).toMatchSnapshot();
-	 })*/
+	it('match snapshot', () => {
+		const headerNavSnapshot = renderer.create(headerNav).toJSON();
+		expect(headerNavSnapshot).toMatchSnapshot();
+	})
 });

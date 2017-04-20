@@ -1,0 +1,109 @@
+exports[`Menu Component Match Snapshot 1`] = `
+<ul
+  aria-activedescendant=""
+  className="ant-menu ant-menu-inline  ant-menu-light ant-menu-root"
+  onKeyDown={[Function bound onKeyDown]}
+  role="menu"
+  style={
+    Object {
+      "height": "100%"
+    }
+  }
+  tabIndex="0">
+  <li
+    className="ant-menu-submenu-inline ant-menu-submenu-open ant-menu-submenu-selected ant-menu-submenu"
+    onMouseEnter={[Function bound onMouseEnter]}
+    onMouseLeave={[Function bound onMouseLeave]}>
+    <div
+      aria-expanded={true}
+      aria-haspopup="true"
+      aria-owns="user$Menu"
+      className="ant-menu-submenu-title"
+      onClick={[Function bound onTitleClick]}
+      onMouseEnter={[Function bound onTitleMouseEnter]}
+      onMouseLeave={[Function bound onTitleMouseLeave]}
+      style={
+        Object {
+          "paddingLeft": 24
+        }
+      }>
+      <span>
+        <i
+          className="anticon anticon-user" />
+        导航一
+      </span>
+    </div>
+    <ul
+      aria-activedescendant=""
+      className="ant-menu ant-menu-inline  ant-menu-sub"
+      id="user$Menu"
+      role="menu"
+      style={Object {}}>
+      <li
+        aria-disabled={undefined}
+        aria-selected={true}
+        className="ant-menu-item-selected ant-menu-item"
+        onClick={[Function bound onClick]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        role="menuitem"
+        style={
+          Object {
+            "paddingLeft": 48
+          }
+        }
+        title={undefined}>
+        <a
+          onClick={[Function bound handleClick]}
+          style={Object {}}>
+          项目 A
+        </a>
+      </li>
+      <li
+        aria-disabled={undefined}
+        aria-selected={false}
+        className="ant-menu-item"
+        onClick={[Function bound onClick]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        role="menuitem"
+        style={
+          Object {
+            "paddingLeft": 48
+          }
+        }
+        title={undefined}>
+        <a
+          onClick={[Function bound handleClick]}
+          style={Object {}}>
+          项目 B
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li
+    className="ant-menu-submenu-inline ant-menu-submenu"
+    onMouseEnter={[Function bound onMouseEnter]}
+    onMouseLeave={[Function bound onMouseLeave]}>
+    <div
+      aria-expanded={false}
+      aria-haspopup="true"
+      aria-owns="notification$Menu"
+      className="ant-menu-submenu-title"
+      onClick={[Function bound onTitleClick]}
+      onMouseEnter={[Function bound onTitleMouseEnter]}
+      onMouseLeave={[Function bound onTitleMouseLeave]}
+      style={
+        Object {
+          "paddingLeft": 24
+        }
+      }>
+      <span>
+        <i
+          className="anticon anticon-notification" />
+        导航二
+      </span>
+    </div>
+  </li>
+</ul>
+`;

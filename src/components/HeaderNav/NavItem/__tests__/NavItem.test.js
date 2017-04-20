@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import ReactTestUtils from 'react-addons-test-utils';
 
 import NavItem from '../index';
@@ -20,7 +20,7 @@ describe('NavItem Component', () => {
 		const navItemNode = ReactDOM.findDOMNode(navItemElement);
 
 		expect(navItemNode.textContent).toBe(itemSetting.label);
-		// expect(renderer.create(item).toJSON()).toMatchSnapshot();
+		expect(renderer.create(navItem).toJSON()).toMatchSnapshot();
 	});
 
 	it('Link Item', () => {
@@ -35,7 +35,7 @@ describe('NavItem Component', () => {
 
 		// navItemNode link doesn't include href attribute
 		expect(navItemNode.querySelector('a')).toBeDefined();
-		// expect(renderer.create(item).toJSON()).toMatchSnapshot();
+		expect(renderer.create(navItem).toJSON()).toMatchSnapshot();
 	});
 
 	it('Function Item', () => {
@@ -50,7 +50,7 @@ describe('NavItem Component', () => {
 
 		ReactTestUtils.Simulate.click(navItemNode.querySelector('a'));
 		expect(itemSetting.fn).toBeCalled();
-		// expect(renderer.create(item).toJSON()).toMatchSnapshot();
+		expect(renderer.create(navItem).toJSON()).toMatchSnapshot();
 	});
 });
 

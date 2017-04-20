@@ -4,7 +4,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import ReactTestUtils from 'react-addons-test-utils';
 
 import Menu from '../index';
@@ -63,8 +63,8 @@ describe('Menu Component', () => {
 		expect(MenuNode.querySelectorAll('.ant-menu-sub').length).toBe(1);
 	});
 
-	/* it('Match Snapshot', () => {
-		const snapshot = renderer.create(Menu).toJSON();
+	it('Match Snapshot', () => {
+		const snapshot = renderer.create(menu).toJSON();
 		expect(snapshot).toMatchSnapshot();
-	});*/
+	});
 });
