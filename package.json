@@ -70,7 +70,7 @@
     "build": "webpack --env=build",
     "start": "node server.js --env=dev",
     "start:build": "node server.js --env=build",
-    "test": "npm run lint && jest --config config/jest/base.json --watch --onlyChanged --no-cache",
+    "test": "npm run lint && jest --config config/jest/base.json --watch --onlyChanged --no-cache --env=test",
     "test:coverage": "npm run lint && jest --config config/jest/coverage.json",
     "codecov": "codecov"
   }

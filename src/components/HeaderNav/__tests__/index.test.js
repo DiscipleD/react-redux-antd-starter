@@ -5,7 +5,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-addons-test-utils';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import HeaderNav from '../index';
 
 describe('HeaderNav Component', () => {
@@ -40,9 +40,7 @@ describe('HeaderNav Component', () => {
 		expect(headerNavNode.querySelector('li.ant-menu-item.ant-menu-item-selected a').textContent).toBe(selectedItem.label);
 	});
 
-	// react-dom & react-test-renderer couldn't be import in a file
-	// that will be solved in 15.4.0. ref: https://github.com/facebook/react/issues/7386
-	/* it('match snapshot', () => {
+	it('match snapshot', () => {
 		const headerNavSnapshot = renderer.create(
 			<HeaderNav
 				navList={menuSetting}
@@ -51,7 +49,7 @@ describe('HeaderNav Component', () => {
 			/>
 		).toJSON();
 		expect(headerNavSnapshot).toMatchSnapshot();
-	})*/
+	});
 
 	it('Logo click', () => {
 		ReactTestUtils.Simulate.click(headerNavNode.querySelector('.header-nav-logo'));

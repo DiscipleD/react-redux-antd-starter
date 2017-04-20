@@ -6,7 +6,7 @@ import configureMockStore from 'redux-mock-store';
 
 import middlewares from '../../middleware';
 import actions from '../index';
-import menuAtions, {QUERY_MENU_LIST} from '../menu';
+import menuActions, {QUERY_MENU_LIST} from '../menu';
 import * as actionTypes from '../action_types';
 
 describe('test actions', () => {
@@ -75,7 +75,7 @@ describe('test actions', () => {
 				label: 'Page B'
 			}]
 		}];
-		return store.dispatch(menuAtions.queryMenuList())
+		return store.dispatch(menuActions.queryMenuList())
 			.then(() => expect(store.getActions()).toEqual(action));
 	});
 });

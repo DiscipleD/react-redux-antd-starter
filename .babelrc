@@ -9,5 +9,11 @@
     "transform-decorators-legacy",
     "transform-object-rest-spread",
     ["import", { "libraryName": "antd", "style": "css" }]
-  ]
+  ],
+
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
 }

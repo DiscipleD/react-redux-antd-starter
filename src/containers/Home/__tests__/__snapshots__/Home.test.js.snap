@@ -1,0 +1,26 @@
+exports[`Home Container match snapshot 1`] = `
+<section>
+  <div
+    className="header-nav">
+    <div
+      className="header-nav-wrapper">
+      <div
+        className="header-nav-logo"
+        onClick={[Function anonymous]}>
+        Project Logo
+      </div>
+      <ul
+        aria-activedescendant=""
+        className="ant-menu ant-menu-horizontal  ant-menu-dark ant-menu-root"
+        onKeyDown={[Function bound onKeyDown]}
+        role="menu"
+        style={
+          Object {
+            "lineHeight": "64px"
+          }
+        }
+        tabIndex="0" />
+    </div>
+  </div>
+</section>
+`;

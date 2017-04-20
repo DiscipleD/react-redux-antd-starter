@@ -1,0 +1,57 @@
+exports[`HeaderNav Component match snapshot 1`] = `
+<div
+  className="header-nav">
+  <div
+    className="header-nav-wrapper">
+    <div
+      className="header-nav-logo"
+      onClick={[Function mockConstructor]}>
+      Project Logo
+    </div>
+    <ul
+      aria-activedescendant=""
+      className="ant-menu ant-menu-horizontal  ant-menu-dark ant-menu-root"
+      onKeyDown={[Function bound onKeyDown]}
+      role="menu"
+      style={
+        Object {
+          "lineHeight": "64px"
+        }
+      }
+      tabIndex="0">
+      <li
+        aria-disabled={undefined}
+        aria-selected={false}
+        className="ant-menu-item"
+        onClick={[Function bound onClick]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        role="menuitem"
+        style={Object {}}
+        title={undefined}>
+        <a
+          onClick={[Function bound handleClick]}
+          style={Object {}}>
+          Page A
+        </a>
+      </li>
+      <li
+        aria-disabled={undefined}
+        aria-selected={true}
+        className="ant-menu-item-selected ant-menu-item"
+        onClick={[Function bound onClick]}
+        onMouseEnter={[Function bound onMouseEnter]}
+        onMouseLeave={[Function bound onMouseLeave]}
+        role="menuitem"
+        style={Object {}}
+        title={undefined}>
+        <a
+          onClick={[Function bound handleClick]}
+          style={Object {}}>
+          Page B
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
