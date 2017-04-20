@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015",
+    ["es2015", { "modules": false }],
     "stage-0",
     "react"
   ],
@@ -8,6 +8,6 @@
     "react-hot-loader/babel",
     "transform-decorators-legacy",
     "transform-object-rest-spread",
-    ["antd", {"style": true}]
+    ["import", { "libraryName": "antd", "style": "css" }]
   ]
 }

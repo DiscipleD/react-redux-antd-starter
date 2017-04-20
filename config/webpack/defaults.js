@@ -13,50 +13,62 @@ const sourcePath = path.join(__dirname, '../../src');
 const buildPath = path.join(__dirname, '../../build');
 const publicPath = '/';
 const resolve = {
-	extensions: ['', '.js', '.jsx'],
+	extensions: ['.js', '.jsx', '.json'],
 	alias: {
 		containers: `${sourcePath}/containers/`,
 		components: `${sourcePath}/components/`,
 		actions: `${sourcePath}/redux/actions/`
 	}
 };
-const postcss = [autoprefixer({browsers: ['last 2 versions']})];
 
 function getDefaultModules() {
 	return {
-		preLoaders: [{
-			test: /\.(js|jsx)$/,
-			loader: 'eslint',
-			include: sourcePath
-		}],
-		loaders: [
+		rules: [
 			{
 				test: /\.(js|jsx)$/,
-				loader: 'babel',
-				include: sourcePath,
+				loader: 'eslint-loader',
+				enforce: "pre",
+				exclude: /node_modules/
 			},
 			{
-				test: /\.css$/,
-				loader: 'style!css!postcss'
+				test: /\.(js|jsx)$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
 			},
 			{
-				test: /\.sass/,
-				loader: 'style!css!postcss!sass?outputStyle=expanded&indentedSyntax'
-			},
-			{
-				test: /\.scss/,
-				loader: 'style!css!postcss!sass?outputStyle=expanded'
-			},
-			{
-				test: /\.less/,
-				loader: 'style!css!postcss!less'
+				test: /\.(sc|c)ss$/,
+				use: [
+					'style-loader',
+					'css-loader?sourceMap',
+					{
+						loader: 'postcss-loader?sourceMap',
+						options: {
+							plugins: () => [autoprefixer({browsers: ['last 2 versions']})]
+						}
+					}, {
+						loader: 'sass-loader',
+						options: {
+							outputStyle: 'expanded'
+						}
+					}]
 			},
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
-				loaders: [
-					'file?hash=sha512&digest=hex&name=[path][name]-[hash:8].[ext]',
-					'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-				]
+				use: [{
+					loader: 'file',
+					options: {
+						hash: 'sha512',
+						digest: 'hex',
+						name: '[path][name]-[hash:8].[ext]'
+					}
+				}, {
+					loader: 'image-webpack',
+					options: {
+						bypassOnDebug: true,
+						optimizationLevel: 7,
+						interlaced: false
+					}
+				}]
 			},
 			{
 				test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
@@ -87,7 +99,7 @@ function getDefaultPlugins() {
 		new HtmlWebpackPlugin({
 			template: sourcePath + '/index.html'
 		}),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoEmitOnErrorsPlugin()
 	];
 }
 
@@ -96,7 +108,6 @@ module.exports = {
 	buildPath,
 	publicPath,
 	resolve,
-	postcss,
 	getDefaultModules,
 	getDefaultPlugins
 };
