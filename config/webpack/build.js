@@ -15,12 +15,13 @@ const config = Object.assign({}, baseConfig, {
 	devtool: 'source-map',
 	plugins: [
 		new CleanPlugin([defaultSettings.buildPath]),
-		new webpack.optimize.DedupePlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': '"production"'
 		}),
+		new webpack.LoaderOptionsPlugin({
+			minimize: true
+		}),
 		new webpack.optimize.UglifyJsPlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.AggressiveMergingPlugin()
 	].concat(baseConfig.plugins)
 });

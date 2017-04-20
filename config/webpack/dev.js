@@ -7,7 +7,6 @@
 const webpack = require('webpack');
 
 const baseConfig = require('./base');
-const defaultSettings = require('./defaults');
 
 const config = Object.assign({}, baseConfig, {
 	entry: {
@@ -20,12 +19,6 @@ const config = Object.assign({}, baseConfig, {
 	cache: true,
 	// eval-source-map can not debug in chrome
 	devtool: 'inline-source-map',
-	middlewareSetting: {
-		stats: {
-			colors: true,
-			cached: false
-		}
-	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({

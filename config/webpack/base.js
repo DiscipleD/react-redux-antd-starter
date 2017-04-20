@@ -7,7 +7,6 @@
 const defaultSettings = require('./defaults');
 
 module.exports = {
-	debug: true,
 	devtool: 'eval',
 	entry: {
 		chunk: ['react', 'react-dom', 'react-redux', 'react-router',
@@ -20,11 +19,6 @@ module.exports = {
 		publicPath: defaultSettings.publicPath
 	},
 	resolve: defaultSettings.resolve,
-	postcss: defaultSettings.postcss,
 	module: defaultSettings.getDefaultModules(),
-	plugins: defaultSettings.getDefaultPlugins(),
-	middlewareSetting: {
-		publicPath: defaultSettings.publicPath,
-		buildPath: defaultSettings.buildPath
-	}
+	plugins: defaultSettings.getDefaultPlugins()
 };

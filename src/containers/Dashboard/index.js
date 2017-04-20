@@ -6,7 +6,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { goHome } from 'actions';
+import { goHome } from 'actions/common';
 import { userLogout } from 'actions/user';
 import { queryMenuSetting } from 'actions/menu'
 import HeaderNav from 'components/HeaderNav';

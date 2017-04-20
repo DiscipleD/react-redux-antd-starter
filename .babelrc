@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015",
+    ["es2015", { "modules": false }],
     "stage-0",
     "react"
   ],
@@ -9,9 +9,6 @@
     "transform-decorators-legacy",
     "transform-object-rest-spread",
     "transform-class-properties",
-    ["import", {
-			"libraryName": "antd",
-			"style": true
-		}]
+    ["import", { "libraryName": "antd", "style": "css" }]
   ]
 }

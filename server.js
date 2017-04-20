@@ -21,8 +21,17 @@ app.use((req, res, next) => {
 });
 
 if (args.env !== 'build') {
+	const middlewareSetting = {
+		publicPath: config.publicPath,
+		buildPath: config.buildPath,
+		stats: {
+			colors: true,
+			cached: false
+		}
+	};
+
 	const compiler = webpack(config);
-	app.use(webpackDevMiddleware(compiler, config.middlewareSetting));
+	app.use(webpackDevMiddleware(compiler, middlewareSetting));
 	app.use(webpackHotMiddleware(compiler));
 }
 
